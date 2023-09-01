@@ -49,7 +49,7 @@ function Card(props) {
 					class="card-img-top"
 					src={img_location}
 					alt="Card image cap"
-					loading="eager"
+					loading="lazy"
 					style={{
 						width: "200px",
 						height: "150px",
@@ -57,7 +57,7 @@ function Card(props) {
 				/>
 				<div class="card-body">
 					<h5 class="card-title">{content.name}</h5>
-					<p class="card-text">Hurry up! {content.desc}!</p>
+					<p class="card-text">{content.desc}!</p>
 				</div>
 				<ul class="list-group list-group-flush">
 					<li class="list-group-item">Expires on {expires}</li>

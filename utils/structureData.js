@@ -5,10 +5,11 @@ function structureData(data) {
 	let desc = Object.values(data["desc"]);
 
 	let result = {
+		HOTEL: [],
 		FOOD: [],
-		PUB: [],
 		TRAVEL: [],
 		SHOPPING: [],
+		PUB: [],
 	};
 
 	for (let i = 0; i < merchant_categories.length; i++) {
@@ -39,6 +40,14 @@ function structureData(data) {
 
 			case "TRAVEL":
 				result["TRAVEL"].push({
+					name: merchant_names[i],
+					coupon_code: coupons[i],
+					desc: desc[i],
+				});
+				continue;
+
+			case "HOTEL":
+				result["HOTEL"].push({
 					name: merchant_names[i],
 					coupon_code: coupons[i],
 					desc: desc[i],
