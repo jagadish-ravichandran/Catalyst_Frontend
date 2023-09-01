@@ -1,0 +1,27 @@
+.navbar {
+	display: flex;
+	flex-direction: row;
+	gap: 90px;
+	justify-content: center;
+	margin-bottom: 50px;
+	background-color: gray;
+}
+
+.navbar * {
+	font-size: 20px;
+	color: white;
+	padding: 15px;
+	text-decoration: none;
+}
+
+.navbar *:hover {
+	color: lightgreen;
+}
+
+.coupon {
+	background-color: lightgreen;
+}
+
+.coupon:hover {
+	color: white;
+}
