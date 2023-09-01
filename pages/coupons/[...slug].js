@@ -2,6 +2,7 @@ import axios from "axios";
 import Link from "next/link";
 import styles from "@/styles/Coupons.module.css";
 import structureData from "@/utils/structureData";
+import { useRouter } from "next/router";
 
 export async function getServerSideProps(context) {
 	const slug = context.params.slug;
@@ -43,9 +44,19 @@ export function Navbar() {
 
 function CouponContainer(props) {
 	let content = props.obj;
-	
+	const router = useRouter();
+
 	return (
 		<>
+			<button
+				style={{ position: "relative", left: "100px" }}
+				onClick={() => router.back()}
+				type="button"
+				class="btn btn-secondary"
+			>
+				<i class="bi bi-arrow-bar-left"></i>
+				Back
+			</button>
 			<div className={styles.couponContainer}>
 				<div className={styles.firstColumn}>
 					<h3 style={{ color: "green" }}>

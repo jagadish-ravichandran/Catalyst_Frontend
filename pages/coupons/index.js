@@ -105,9 +105,12 @@ export default function Coupons(props) {
 		<>
 			<Navbar></Navbar>
 
-			{categories.map((each_cat) => {
+			<div className={styles.destination}>Destination : Chennai</div>
+
+			{categories.map((each_cat, idx) => {
 				return (
 					<MerchantContainer
+						key={idx}
 						category={each_cat}
 						merchants={props[`${each_cat}`]}
 					></MerchantContainer>

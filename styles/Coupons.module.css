@@ -45,9 +45,10 @@
 	gap: 100px;
 	justify-content: center;
 	align-items: center;
-	height: 60vh;
+	height: 50vh;
 	border: 2px solid black;
 	margin: 100px;
+	margin-top: 50px;
 	background-color: azure;
 }
 
@@ -63,4 +64,11 @@
 	gap: 15px;
 	border-left: 2px solid grey;
 	padding-left: 20px;
+}
+
+.destination {
+	border: 2px solid red;
+	text-align: center;
+	display: inline;
+	float: right;
 }

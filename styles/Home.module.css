@@ -37,8 +37,6 @@
 }
 
 .content > * {
-	background: -webkit-linear-gradient(yellow, red);
-	-webkit-text-fill-color: transparent;
 	font-size: 70px;
 	position: absolute;
 	right: 60px;
