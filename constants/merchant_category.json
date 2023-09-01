@@ -1,3 +1,14 @@
 {
-	"category": ["travel", "shopping", "food"]
+	"category": [
+		"SHOPPING",
+		"FOOD",
+		"TRAVEL",
+		"ELECTRONICS",
+		"JEWELLARY",
+		"FURNITURE",
+		"PUB",
+		"COSMETICS",
+		"GROCERIES",
+		"VEHICLE"
+	]
 }

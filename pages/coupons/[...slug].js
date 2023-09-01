@@ -1,21 +1,25 @@
 import axios from "axios";
 import Link from "next/link";
 import styles from "@/styles/Coupons.module.css";
-export async function getServerSideProps(context) {
-	const id = context.params.id;
+import structureData from "@/utils/structureData";
 
-	//get data related to this coupon id
-	// merchant name, offer rate, coupon code
-	// let result = await axios.get()
+export async function getServerSideProps(context) {
+	const slug = context.params.slug;
+
+	const category = slug[0].toUpperCase();
+	const id = slug[1];
+
+	let response = await axios.get(
+		"https://vamsipanchada.pythonanywhere.com/detail/?id=8965&location=CHENNAI"
+	);
+
+	let result = structureData(response.data);
+
+	let final_content = result[category][id];
 
 	return {
 		props: {
-			coupon: {
-				name: "dominos",
-				offer_rate: "30%",
-				coupon_code: "45532C",
-				expires_in: "2023-09-10",
-			},
+			coupon: final_content,
 		},
 	};
 }
@@ -39,6 +43,7 @@ export function Navbar() {
 
 function CouponContainer(props) {
 	let content = props.obj;
+	
 	return (
 		<>
 			<div className={styles.couponContainer}>
@@ -58,7 +63,7 @@ function CouponContainer(props) {
 				</div>
 
 				<div className={styles.secondColumn}>
-					<div> Flat {content.offer_rate} in all</div>
+					<div> {content.desc}</div>
 					<div> It expires in {content.expires_in}</div>
 					<div> It is available only in {content.name}</div>
 				</div>

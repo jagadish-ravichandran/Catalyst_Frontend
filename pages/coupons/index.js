@@ -3,45 +3,16 @@ import Link from "next/link";
 import Image from "next/image";
 import category_json from "@/constants/merchant_category.json";
 import { useEffect, useState } from "react";
+import axios from "axios";
+import structureData from "@/utils/structureData";
 
 export async function getServerSideProps(props) {
-	// get hotel suggestions from backend
-	// let hotels = await axios.get("/hotels");
-
-	// // get travel suggestions from backend
-	// let travels = await axios.get("/travels");
-
-	// // get travel suggestions from backend
-	// let restaurants = await axios.get("/restaurants");
-	console.log(category_json.category);
-	//get coupons from all
+	let response = await axios.get(
+		"https://vamsipanchada.pythonanywhere.com/detail/?id=8965&location=CHENNAI"
+	);
 
 	return {
-		props: {
-			food: [
-				{
-					id: 1,
-					name: "dominos",
-					offer: 30,
-					expires: "2023-09-20",
-				},
-				{
-					id: 2,
-					name: "pizzahut",
-					offer: 20,
-					expires: "2023-09-15",
-				},
-			],
-
-			shopping: [
-				{
-					id: 1,
-					name: "saravana_stores",
-					offer: 50,
-					expires: "2023-09-12",
-				},
-			],
-		},
+		props: structureData(response.data),
 	};
 }
 
@@ -64,6 +35,9 @@ export function Navbar() {
 
 function Card(props) {
 	let content = props.obj;
+	let card_id = props.id;
+	let redirect_page = `coupons/${props.category.toLowerCase()}/${card_id}`;
+	let expires = `2023-09-${Math.round(Math.random() * 30)}`;
 
 	let img_location = `/static/images/merchants/${content.name}.jpg`;
 	return (
@@ -77,23 +51,19 @@ function Card(props) {
 					alt="Card image cap"
 					loading="eager"
 					style={{
-						width: "300px",
-						height: "200px",
+						width: "200px",
+						height: "150px",
 					}}
 				/>
 				<div class="card-body">
 					<h5 class="card-title">{content.name}</h5>
-					<p class="card-text">
-						Hurry up! There is {content.offer}% on all!
-					</p>
+					<p class="card-text">Hurry up! {content.desc}!</p>
 				</div>
 				<ul class="list-group list-group-flush">
-					<li class="list-group-item">
-						Expires on {content.expires}
-					</li>
+					<li class="list-group-item">Expires on {expires}</li>
 				</ul>
 				<div class="card-body">
-					<a href="#" class="card-link">
+					<a href={redirect_page} class="card-link">
 						Avail The Offer
 					</a>
 				</div>
@@ -109,8 +79,15 @@ function MerchantContainer(props) {
 		<>
 			<h1>{category}</h1>
 			<div className={styles.merchantContainer}>
-				{merchants.map((item) => {
-					return <Card key={item.id} obj={item}></Card>;
+				{merchants.map((item, idx) => {
+					return (
+						<Card
+							category={category}
+							id={idx}
+							key={idx}
+							obj={item}
+						></Card>
+					);
 				})}
 			</div>
 		</>

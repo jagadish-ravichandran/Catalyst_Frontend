@@ -31,6 +31,7 @@
 	flex-direction: row;
 	margin: 30px;
 	padding: 10px;
+	flex-wrap: wrap;
 }
 
 .merchantContainer > * {
