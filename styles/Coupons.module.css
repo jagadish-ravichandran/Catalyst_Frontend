@@ -25,3 +25,15 @@
 .coupon:hover {
 	color: white;
 }
+
+.merchantContainer {
+	display: flex;
+	flex-direction: row;
+	margin: 30px;
+	padding: 10px;
+}
+
+.merchantContainer > * {
+	padding: 20px;
+	margin: 10px;
+}

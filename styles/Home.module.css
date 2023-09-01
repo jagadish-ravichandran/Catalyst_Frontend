@@ -32,13 +32,12 @@
 	justify-content: center;
 	height: 70vh;
 	align-items: center;
-	background-image: url("../public/home/background.jpg");
+	background-image: url("../public/static/images/home/background.jpg");
 	background-size: 100%;
 }
 
 .content > * {
 	background: -webkit-linear-gradient(yellow, red);
-	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	font-size: 70px;
 	position: absolute;
