@@ -51,7 +51,10 @@ function CouponContainer(props) {
 					<div>
 						{content.coupon_code} <i class="bi bi-clipboard"></i>
 					</div>
-					<p>Copy and use in merchant site</p>
+
+					<button type="button" class="btn btn-primary">
+						Redeem Now
+					</button>
 				</div>
 
 				<div className={styles.secondColumn}>
