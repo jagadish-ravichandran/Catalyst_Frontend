@@ -3,20 +3,25 @@ import Link from "next/link";
 import styles from "@/styles/Coupons.module.css";
 import structureData from "@/utils/structureData";
 import { useRouter } from "next/router";
-
+import Image from "next/image";
+import hotel_images_json from "@/constants/hotel_images.json";
 export async function getServerSideProps(context) {
 	const slug = context.params.slug;
 
 	const category = slug[0].toUpperCase();
 	const id = slug[1];
 
-	let response = await axios.get(
-		"https://vamsipanchada.pythonanywhere.com/detail/?id=8965&location=CHENNAI"
-	);
+	let final_content;
 
-	let result = structureData(response.data);
-
-	let final_content = result[category][id];
+	if (category === "HOTEL") {
+		final_content = JSON.parse(context.req.cookies.HOTEL)[id];
+	} else {
+		let response = await axios.get(
+			"https://vamsipanchada.pythonanywhere.com/detail/?id=8965&location=CHENNAI"
+		);
+		let result = structureData(response.data);
+		final_content = result[category][id];
+	}
 
 	return {
 		props: {
@@ -46,6 +51,15 @@ function CouponContainer(props) {
 	let content = props.obj;
 	const router = useRouter();
 
+	let img_location;
+
+	if (Object.keys(hotel_images_json).includes(content.name)) {
+		img_location = hotel_images_json[content.name];
+		console.log(img_location);
+	} else {
+		img_location = `/static/images/merchants/${content.name}.jpg`;
+	}
+
 	return (
 		<>
 			<button
@@ -58,6 +72,20 @@ function CouponContainer(props) {
 				Back
 			</button>
 			<div className={styles.couponContainer}>
+				<div>
+					<Image
+						width={500}
+						height={500}
+						class="card-img-top"
+						src={img_location}
+						alt="Card image cap"
+						loading="lazy"
+						style={{
+							width: "200px",
+							height: "150px",
+						}}
+					></Image>
+				</div>
 				<div className={styles.firstColumn}>
 					<h3 style={{ color: "green" }}>
 						Coupon Activated{" "}
