@@ -10,12 +10,16 @@ export async function getServerSideProps(context) {
 
 	const category = slug[0].toUpperCase();
 	const id = slug[1];
-
 	let final_content;
 
 	if (category === "HOTEL") {
 		final_content = JSON.parse(context.req.cookies.HOTEL)[id];
-	} else {
+	} 
+	
+	else if (category == "NEW_OFFER"){
+		final_content = JSON.parse(context.req.cookies.NEW_OFFER)
+	}
+	else {
 		let response = await axios.get(
 			"https://vamsipanchada.pythonanywhere.com/detail/?id=8965&location=CHENNAI"
 		);
