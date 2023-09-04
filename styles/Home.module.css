@@ -2,47 +2,50 @@
 	display: flex;
 	flex-direction: row;
 	gap: 90px;
-	justify-content: center;
+	justify-content: space-evenly;
 	margin-bottom: 50px;
 	background-color: gray;
 }
 
 .navbar * {
 	font-size: 20px;
+	font-family: "Rajdhani", sans-serif;
 	color: white;
 	padding: 15px;
 	text-decoration: none;
 }
 
+#productName {
+	font-size: 25px;
+}
+
 .navbar *:hover {
-	color: lightgreen;
+	color: rgb(39, 158, 255);
+}
+
+.home {
+	background-color: rgb(39, 158, 255);
 }
 
 .home:hover {
 	color: white;
 }
 
-.home {
-	background-color: lightgreen;
-}
-
-.content {
+.outer {
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
-	height: 70vh;
 	align-items: center;
-	background-image: url("../public/static/images/home/background.jpg");
-	background-size: 100%;
+	justify-content: space-evenly;
+	height: 70vh;
 }
 
-.content > * {
-	font-size: 70px;
-	position: absolute;
-	right: 60px;
+.innerOne {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 }
 
-.coupon {
-	color: white;
-	font-style: normal;
+.innerTwo {
+	display: flex;
+	flex-direction: column;
 }

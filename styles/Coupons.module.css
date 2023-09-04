@@ -2,24 +2,29 @@
 	display: flex;
 	flex-direction: row;
 	gap: 90px;
-	justify-content: center;
+	justify-content: space-evenly;
 	margin-bottom: 50px;
 	background-color: gray;
 }
 
 .navbar * {
 	font-size: 20px;
+	font-family: "Rajdhani", sans-serif;
 	color: white;
 	padding: 15px;
 	text-decoration: none;
 }
 
+#productName {
+	font-size: 25px;
+}
+
 .navbar *:hover {
-	color: lightgreen;
+	color: rgb(39, 158, 255);
 }
 
 .coupon {
-	background-color: lightgreen;
+	background-color: rgb(39, 158, 255);
 }
 
 .coupon:hover {

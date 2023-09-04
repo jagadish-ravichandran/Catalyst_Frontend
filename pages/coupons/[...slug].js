@@ -33,6 +33,7 @@ export async function getServerSideProps(context) {
 export function Navbar() {
 	return (
 		<div className={styles.navbar}>
+			<div id={styles.productName}>Catalyst</div>
 			<div>
 				<Link href="/">Home</Link>
 			</div>
@@ -103,7 +104,7 @@ function CouponContainer(props) {
 
 				<div className={styles.secondColumn}>
 					<div> {content.desc}</div>
-					<div> It expires in {content.expires_in}</div>
+					<div> It expires in 2023-11-20</div>
 					<div> It is available only in {content.name}</div>
 				</div>
 			</div>

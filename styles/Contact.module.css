@@ -2,26 +2,68 @@
 	display: flex;
 	flex-direction: row;
 	gap: 90px;
-	justify-content: center;
+	justify-content: space-evenly;
 	margin-bottom: 50px;
 	background-color: gray;
 }
 
 .navbar * {
 	font-size: 20px;
+	font-family: "Rajdhani", sans-serif;
 	color: white;
 	padding: 15px;
 	text-decoration: none;
 }
 
+#productName {
+	font-size: 25px;
+}
+
 .navbar *:hover {
-	color: lightgreen;
+	color: rgb(39, 158, 255);
 }
 
 .contact {
-	background-color: lightgreen;
+	background-color: rgb(39, 158, 255);
 }
 
 .contact:hover {
 	color: white;
+}
+
+.form {
+	color: white;
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	align-items: center;
+	height: 70vh;
+	justify-content: center;
+	gap: 15px;
+}
+
+.form * {
+	padding: 10px;
+	margin: 10px;
+	border-radius: 10px;
+	width: 300px;
+	filter: drop-shadow(10px 10px 10px grey);
+	border-style: none;
+}
+
+.form input[type="submit"] {
+	border-radius: 10px;
+
+	background-color: rgb(39, 158, 255);
+	width: auto;
+}
+
+.form p {
+	color: black;
+	filter: none;
+	font-size: 30px;
+	text-align: center;
+	background: -webkit-linear-gradient(rgb(39, 158, 255), grey);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }

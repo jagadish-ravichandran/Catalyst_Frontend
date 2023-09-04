@@ -23,6 +23,7 @@ export async function getServerSideProps(context) {
 export function Navbar() {
 	return (
 		<div className={styles.navbar}>
+			<div id={styles.productName}>Catalyst</div>
 			<div>
 				<Link href="/">Home</Link>
 			</div>
@@ -41,7 +42,6 @@ function Card(props) {
 	let content = props.obj;
 	let card_id = props.id;
 	let redirect_page = `coupons/${props.category.toLowerCase()}/${card_id}`;
-	let expires = `2023-09-${Math.round(Math.random() * 30)}`;
 
 	let img_location;
 
@@ -70,7 +70,7 @@ function Card(props) {
 					<p class="card-text">{content.desc}!</p>
 				</div>
 				<ul class="list-group list-group-flush">
-					<li class="list-group-item">Expires on {expires}</li>
+					<li class="list-group-item">Expires on 2023-11-20</li>
 				</ul>
 				<div class="card-body">
 					<a href={redirect_page} class="card-link">
