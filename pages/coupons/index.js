@@ -64,7 +64,11 @@ function Card(props) {
 					loading="lazy"
 					style={{
 						width: "200px",
-						height: "150px",
+						height: "200px",
+						borderRadius:"100%",
+						marginBottom:"30px",
+						border:"5px solid grey",
+						alignSelf:"center"
 					}}
 				/>
 				<div class="card-body">
@@ -87,9 +91,16 @@ function Card(props) {
 function MerchantContainer(props) {
 	let merchants = props.merchants;
 	let category = props.category;
+	let captisiledCat = category[0] + category.slice(1).toLowerCase()
+
+	const headingStyles = {
+		textAlign:"center",
+		marginTop:"100px"
+
+	}
 	return (
 		<>
-			<h1>{category}</h1>
+			<h1 style={headingStyles}> {captisiledCat}</h1>
 			<div className={styles.merchantContainer}>
 				{merchants.map((item, idx) => {
 					return (
@@ -158,7 +169,6 @@ export default function Coupons(props) {
 		<>
 			<Navbar></Navbar>
 
-			<div className={styles.destination}>Destination : Chennai</div>
 
 			{categories.map((each_cat, idx) => {
 				return (

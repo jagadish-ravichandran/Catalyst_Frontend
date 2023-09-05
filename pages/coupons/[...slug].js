@@ -87,7 +87,8 @@ function CouponContainer(props) {
 						loading="lazy"
 						style={{
 							width: "200px",
-							height: "150px",
+							height: "200px",
+						borderRadius:"100%"
 						}}
 					></Image>
 				</div>
