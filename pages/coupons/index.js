@@ -66,22 +66,33 @@ function Card(props) {
 						width: "200px",
 						height: "200px",
 						borderRadius:"100%",
-						marginBottom:"30px",
+						marginBottom:"20px",
 						border:"5px solid grey",
 						alignSelf:"center"
 					}}
 				/>
 				<div class="card-body">
 					<h5 class="card-title">{content.name}</h5>
-					<p class="card-text">{content.desc}!</p>
+					<p class="card-text mt-4">{content.desc}!</p>
 				</div>
-				<ul class="list-group list-group-flush">
+				<ul class="list-group list-group-flush ">
 					<li class="list-group-item">Expires on 2023-11-20</li>
 				</ul>
-				<div class="card-body">
-					<a href={redirect_page} class="card-link">
+				<div class="card-body" style={{
+					
+					textAlign:"center"
+				}}>
+					
+					<button style={{
+						borderRadius:"15px"
+					}} type="button" class="btn btn-primary mt-2">
+						<a style={{
+							color:"white",
+							textDecoration:"none"
+						}} href={redirect_page}>
 						Avail The Offer
-					</a>
+						</a>
+					</button>
 				</div>
 			</div>
 		</>
