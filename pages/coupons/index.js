@@ -152,7 +152,7 @@ export default function Coupons(props) {
 		console.log(typeof props.HOTEL);
 
 		setCookie("HOTEL", props.HOTEL);
-		setTimeout(PushNotication, 1000);
+		setTimeout(PushNotication, 10000);
 	}, []);
 	return (
 		<>
