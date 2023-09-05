@@ -1,0 +1,51 @@
+.navbar {
+	display: flex;
+	flex-direction: row;
+	gap: 90px;
+	justify-content: space-evenly;
+	margin-bottom: 50px;
+	background-color: gray;
+}
+
+.navbar * {
+	font-size: 20px;
+	font-family: "Rajdhani", sans-serif;
+	color: white;
+	padding: 15px;
+	text-decoration: none;
+}
+
+#productName {
+	font-size: 25px;
+}
+
+.navbar *:hover {
+	color: rgb(39, 158, 255);
+}
+
+.home {
+	background-color: rgb(39, 158, 255);
+}
+
+.home:hover {
+	color: white;
+}
+
+.outer {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-evenly;
+	height: 70vh;
+}
+
+.innerOne {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.innerTwo {
+	display: flex;
+	flex-direction: column;
+}
