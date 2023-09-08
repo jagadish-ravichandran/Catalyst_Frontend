@@ -10,7 +10,7 @@ export default function App({ Component, pageProps }) {
 				<title>Catalyst</title>
 				<meta
 					name="description"
-					content="A recommendation for the HDFC card users"
+					content="A recommendation for the users"
 				/>
 				<meta
 					name="viewport"
